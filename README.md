@@ -1,6 +1,7 @@
 --PLP-SQL-Code
 
-‎-- Week 1 Assignment 
+
+‎--Database-Wk-1 Assignment 
 ‎/*Write an SQL query to create a database called salesDB.
 ‎Write an SQL query to drop delete a database called Demo.*/
 ‎
@@ -10,10 +11,8 @@
 ‎
 ‎DROP DATABASE Demo;
 ‎
-‎Github url: https://github.com/Sucremckay/PLP-SQL-Code
 ‎
-‎
-‎--Week 2 Assignment:
+‎--Database-Wk-2 Assignment:
 ‎
 ‎USE expenses_tracker;
 ‎
@@ -70,7 +69,7 @@
 ‎DROP TABLE income;
 ‎
 ‎
-‎--Week 3 Assignment 
+‎--Database-Wk-3 Assignment 
 ‎
 ‎SELECT category, SUM(amount) AS total_spent
 ‎FROM expenses
@@ -86,7 +85,7 @@
 ‎GROUP BY category DESC
 ‎Limit 3;
 ‎
-‎--Week 4 Assignment
+‎--Database-Wk-4 Assignment
 ‎SELECT paymentDate
 ‎SUM(amount) AS totalAmount
 ‎FROM payment
@@ -108,6 +107,25 @@
 ‎MAX(amount) AS highest_Amount
 ‎FROM payment
 ‎ORDER BY check number;
+‎
+‎
+‎
+‎
+‎
+‎
+‎
+‎
+‎
+‎
+‎
+‎
+‎
+‎
+‎
+‎
+‎
+‎
+‎
 ‎
 ‎
 ‎
