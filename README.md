@@ -107,6 +107,107 @@
 ‎MAX(amount) AS highest_Amount
 ‎FROM payment
 ‎ORDER BY check number;
+
+
+‎--Database-Wk-4 Assignment
+‎SELECT paymentDate
+‎SUM(amount) AS totalAmount
+‎FROM payment
+‎ORDER BY paymentDate
+‎GROUP BY paymentDate DESC
+‎Limit 5;
+‎
+‎SELECT customerName, Country
+‎AVG(creditLimit) AS average_creditLimit
+‎FROM customer
+‎GROUP BY customerName, Country;
+‎
+‎SELECT productCode, quantityOrdered
+‎SUM(priceEach * quantityOrdered) AS total_price
+‎FROM orderdetails
+‎GROUP BY productCode, quantityOrdered;
+‎
+‎SELECT check number
+‎MAX(amount) AS highest_Amount
+‎FROM payment
+‎ORDER BY check number;
+‎
+‎--Database-wk-5 Assignment 
+‎
+‎DROP INDEX  IF EXITS IDsphone ON CustomerID;
+‎
+‎CREATE USER 'bob@localhost' IDENTIFIED BY 'PASS123';
+‎
+‎GRANT INSERT ON SalesDB.* TO 'bob'@'localhost';
+‎FLUSH PRIVILEGES;
+‎
+‎ALTER USER 'bob@localhost' IDENTIFIED BY 'PASS123';
+
+‎
+‎--Database-wk-6 Assignment
+‎
+‎USE salesDB;
+‎
+‎SELECT 
+‎employees.firstName,
+‎employees.lastName,
+‎employees.email,
+‎employees.officeCode,
+‎FROM employees;
+‎
+‎INNER JOIN offices 
+‎ON employees.officeCode = officeCode.officeCode;
+‎
+‎SELECT productName,
+‎productName.productVendor
+‎productName.productLine,
+‎
+‎FROM products
+‎LEFT JOIN productLines
+‎ON productLine = productLine.productLine;
+‎
+‎SELECT 
+‎offices.orderDate,
+‎offices.shippedDate,
+‎offices.status,
+‎offices.customerNumber,
+‎FROM customer
+‎RIGHT JOIN order 
+‎ON customer.customerName = offices.customerName
+‎LIMIT 10;
+‎
+‎
+‎--Another way to write the code
+‎
+‎USE salesDB;
+‎
+‎SELECT 
+‎e.firstName,
+‎e.lastName,
+‎e.email,
+‎e.officeCode,
+‎FROM employees e
+‎INNER JOIN offices o
+‎ON e.officeCode = o.officeCode;
+‎
+‎SELECT productName,
+‎productName.productVendor
+‎productName.productLine,
+‎
+‎FROM products p
+‎LEFT JOIN productLines pl
+‎ON p.productLine = pl.pl;
+‎
+‎SELECT 
+‎o.orderDate,
+‎o.shippedDate,
+‎o.status,
+‎o.customerNumber,
+‎FROM customer c
+‎RIGHT JOIN order o
+‎ON c.customerName = o.customerName
+‎LIMIT 10;
+‎
 ‎
 ‎
 ‎
