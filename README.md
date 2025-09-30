@@ -209,6 +209,41 @@
 ‎LIMIT 10;
 ‎
 ‎
+--Database-wk-7-Assignment
+
+‎--Employee Salary History
+‎
+‎CREATE TABLE EmployeeSalaryHistory (
+‎    EmployeeID INT,
+‎    Salary DECIMAL(10,2),
+‎    ValidFrom DATE,
+‎    ValidTo DATE,
+‎    TransactionStart TIMESTAMP,
+‎    TransactionEnd TIMESTAMP
+‎);
+‎
+‎--Content Management System
+‎
+‎CREATE TABLE Contents (
+‎    ContentID INT PRIMARY KEY,
+‎    Title VARCHAR(200),
+‎    ContentType ENUM('Article', 'Video', 'Podcast')
+‎);
+‎
+‎CREATE TABLE Articles (
+‎    ContentID INT PRIMARY KEY,
+‎    Body TEXT,
+‎    FOREIGN KEY (ContentID) REFERENCES Contents(ContentID)
+‎);
+‎
+‎CREATE TABLE Videos (
+‎    ContentID INT PRIMARY KEY,
+‎    URL VARCHAR(255),
+‎    Duration INT,
+‎    FOREIGN KEY (ContentID) REFERENCES Contents(ContentID)
+‎);
+‎
+‎
 ‎
 ‎
 ‎
